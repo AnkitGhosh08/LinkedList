@@ -69,8 +69,28 @@ public class LinkedListServices {
         head = node;
     }
 
+    /**[4]Method to print append.
+     * @param data : we are passing the data here
+     */
+
+    public void append(int data){
+        Node newNode = new Node(data);
+        // if head or LinkedList is empty
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        //If LinkedList is present then from Point 2
+        Node currNode = head;
+        while (currNode.next != null) {
+            currNode = currNode.next;
+        }
+
+        currNode.next = newNode;
+    }
+
     /**
-     * [4]Method to print the list
+     * [5]Method to print the list
      * 1. If head is null then the LinkedList is empty
      * 2. Here we are printing the current node data and update it.
      */
@@ -79,7 +99,6 @@ public class LinkedListServices {
             System.out.println("List is empty");
             return;
         }
-
         //we are not moving the head to traverse. We are assigning the currNode to head as changing the currNode
         Node currNode = head;
         //Here we are traversing till the currNode is not null and then display the data of currNode

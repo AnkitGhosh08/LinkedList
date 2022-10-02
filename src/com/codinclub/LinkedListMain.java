@@ -11,16 +11,15 @@ public class LinkedListMain{
 
                 LinkedListServices list = new LinkedListServices();
                 /**
-                 * Here we are calling the add method to add node
-                 * We used addFirst method
+                 * Here we are calling the append method.
                  *  Node with data 70 is First Created
-                 *  Next 30 is added to 70
-                 *  Finally 56 is added to 30
+                 *  Next 30 is appended to 70
+                 *  Finally 56 is appended to 30
                  *  LinkedList Sequence: 56->30->70
                  */
-                list.push(70);
-                list.push(30);
-                list.push(56);
+                list.append(56);
+                list.append(30);
+                list.append(70);
                 list.printList();
 
         }
