@@ -68,29 +68,8 @@ public class LinkedListServices {
         node.next = head;
         head = node;
     }
-
-    /**[4]Method to print append.
-     * @param data : we are passing the data here
-     */
-
-    public void append(int data){
-        Node newNode = new Node(data);
-        // if head or LinkedList is empty
-        if (head == null) {
-            head = newNode;
-            return;
-        }
-        //If LinkedList is present then from Point 2
-        Node currNode = head;
-        while (currNode.next != null) {
-            currNode = currNode.next;
-        }
-
-        currNode.next = newNode;
-    }
-
     /**
-     * [5]Method to print the list
+     * [4]Method to print the list
      * 1. If head is null then the LinkedList is empty
      * 2. Here we are printing the current node data and update it.
      */
@@ -110,7 +89,7 @@ public class LinkedListServices {
         System.out.println("NULL");
     }
     /**
-     * [6] Method to print the node in a specific location
+     * [5] Method to print the node in a specific location
      * 1. First we pass the before node and data. The node we pass is the node before which we have to add the data.
      * 2. Then we assign the currNode as head
      * 3. Then we create a new node of the data
@@ -131,6 +110,17 @@ public class LinkedListServices {
         newNode.next = currNode.next;
         currNode.next = newNode;
         System.out.println("Inserted value " + data + " after node value " + before);
-
+    }
+    /**
+     * Here we will change the head to next node and the first node will be removed by the garbage collector
+     * Hence we used here head.Next
+     */
+    public void deleteFirst() {
+        if(head == null) {
+            System.out.println("The list is empty");
+            return;
+        }
+        System.out.println("Successfully deleted the first node " + head.data);
+        head = head.next;
     }
 }
