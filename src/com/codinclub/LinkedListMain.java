@@ -1,6 +1,6 @@
 package com.codinclub;
 
-public class LinkedListMain{
+public class LinkedListMain {
         Node head;
 
         /**
@@ -12,20 +12,17 @@ public class LinkedListMain{
                 LinkedListServices list = new LinkedListServices();
                 /**
                  * Here we are calling the add method to add node
-                 * We used add method and insertBetween to add node                 *
-                 * node with data 56 is First Created
-                 * Next we have appended 70 to 56
-                 * Then we have inserted 30 between 56 & 70
-                 * Final Sequence: 56->30->70
+                 * We used deletFirst method to delete the first node
+                 *  Final Sequence: 30->70
                  */
-                list.append(56);
-                list.append(70);
+                list.add(56);
+                list.add(30);
+                list.add(70);
                 list.printList();
 
-                list.insertBetween(56, 30);
+                list.deleteFirst();
                 list.printList();
 
         }
 }
-
 
