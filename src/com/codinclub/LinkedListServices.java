@@ -4,7 +4,7 @@ package com.codinclub;
  * Here we are defining the methods of LinkedList
  * PROCEDURE:
  * 1. We are first adding the node to the LinkedList at the last.
- * 2. We have also created method addFirst to add node first i.e before the current node
+ * 2. We have also created method addFirst to add node first i.e. before the current node
  * 3. Then we have created the printList method to print the LinkedList
  */
 public class LinkedListServices {
@@ -12,11 +12,11 @@ public class LinkedListServices {
 
     /**
      * [1] We have created the method add to add node.
-     * In this we have added the node to the last i.e it will travel in the LinkedList till the last node is null and then add the node to last.
+     * In this we have added the node to the last i.e. it will travel in the LinkedList till the last node is null and then add the node to last.
      * 1. First we will check if the head is null.
-     * 2. Then we have created a node as currNode and assign it to head and then we will update the current Node.
+     * 2. Then we have created a node as currNode and assign it to head, and then we will update the current Node.
      * 3. We will update the currNode till it is not null
-     * 4. When reached to last node then we will assign the currNode.next as new node
+     * 4. When reached to last node then we will assign the currNode. Next as new node
      *
      * @param data We are passing the data here
      */
@@ -38,9 +38,9 @@ public class LinkedListServices {
 
     /**
      * [2]Method to add data at the first
-     * 1. First we will check if the head is null or LinkedList exists
+     * 1. First we will check if the head is null or LinkedList exists.
      * 2. If null then we will create the new node and assign the head to it.
-     * 3. If linkedList exists then we will point the head to newNode.next
+     * 3. If linkedList exists then we will point the head to newNode.Next.
      * 4. And then move the head to new node. Here we are moving the head as we are adding node first
      *
      * @param data : we are passing the data here
@@ -58,9 +58,19 @@ public class LinkedListServices {
         head = newNode;
     }
 
+    /**
+     * [3]Method to print the push.
+     * @param data : we are passing the data here
+     */
+    public void push(int data) {
+        //creating node.
+        Node node = new Node(data);
+        node.next = head;
+        head = node;
+    }
 
     /**
-     * [3]Method to print the list
+     * [4]Method to print the list
      * 1. If head is null then the LinkedList is empty
      * 2. Here we are printing the current node data and update it.
      */
