@@ -94,7 +94,7 @@ public class LinkedListServices {
      * 2. Then we assign the currNode as head
      * 3. Then we create a new node of the data
      * 4. Then we iterate in the list till we find the before node.
-     * 5. Once we find the before node then we assign the currNode next to newNode.next
+     * 5. Once we find the before node then we assign the currNode next to newNode.Next
      * 6. And currNode.Next to newNode
      * @param before : Here we will pass the node after which we have to add the new node
      * @param data : Here we are passing the data
@@ -128,9 +128,9 @@ public class LinkedListServices {
      * Here we traverse through the LinkedList and make the second last next node as null.
      * 1. First we check if the head is null
      * 2. Second we check if there is only one node, then we make the head as null
-     * 3. Here we make the secondLast node as head and lastNode as head.next
+     * 3. Here we make the secondLast node as head and lastNode as head.Next
      * 4. And then we traverse in linkedList till the lastNode next node is not null
-     * 5. Once we get the last and secondLast node we make the secondLast.next as null
+     * 5. Once we get the last and secondLast node we make the secondLast.Next as null
      */
     public void deleteLast() {
         if(head == null) {
@@ -152,5 +152,28 @@ public class LinkedListServices {
         }
         System.out.println("Successfully deleted the last node " + lastNode.data);
         secondLast.next = null;
+    }
+    /**
+     * [7] Method to find the node in the LinkedList
+     * 1. Here we make the currNode as head
+     * 2. And then we traverse in the LinkedList to find the data
+     * 3. if currNode data is equal to the data passed as input then node found
+     * 4. If node not found in the LinkedList then we return null
+     * @param data : we pass the data
+     * @return: if data found then we return the node or else return null
+     */
+    public Node findNode(int data) {
+        Node currNode = head;
+
+        while(currNode != null) {
+            if(currNode.data == data) {
+                System.out.println(" Node found for the value " + data);
+                return currNode;
+            }
+
+            currNode = currNode.next;
+        }
+        System.out.println(" Sorry!! Unable to find the node of value " + data);
+        return null;
     }
 }
