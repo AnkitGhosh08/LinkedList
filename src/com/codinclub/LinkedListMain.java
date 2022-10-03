@@ -20,8 +20,8 @@ public class LinkedListMain {
                 list.add(70);
                 list.printList();
 
-                list.deleteLast();
-                list.printList();
+                list.findNode(30);
+                list.findNode(80);
 
         }
 }
